@@ -1,0 +1,7 @@
+docker run --rm -v /$(pwd):/$(pwd) -w /$(pwd) znly/protoc --plugin=protoc-gen-grpc=/usr/bin/grpc_python_plugin --python_out=./mes
+sages/  --grpc_out=./messages/  --proto_path=./protobuf ./protobuf/*.proto
+
+
+python -m grpc_tools.protoc  --proto_path=.  --python_out=../gen-py  --grpc_python_out=../gen-py  users_types.proto
+python -m grpc_tools.protoc  --proto_path=.  --python_out=../gen-py  --grpc_python_out=../gen-py  user.proto
+
